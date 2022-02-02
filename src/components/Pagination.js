@@ -9,15 +9,20 @@ function Pagination({ newsPerPage, totalNews, paginate, category }) {
 
   return (
     <nav>
-      <ul className="flex">
+      <div className="flex pagination text-shadow fs-200">
+        <i className="fas fa-angle-left fa-lg story"></i>
         {pageNumbers.map((number) => (
-          <li key={number}>
-            <Link to={`${category}/${number}`} onClick={() => paginate(number)}>
-              {number}
-            </Link>
-          </li>
+          <Link
+            to={`${category}/${number}`}
+            onClick={() => paginate(number)}
+            key={number}
+            className="story"
+          >
+            {number}
+          </Link>
         ))}
-      </ul>
+        <i className="fas fa-angle-right fa-lg story"></i>
+      </div>
     </nav>
   );
 }

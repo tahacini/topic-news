@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Nav({ setCategory }) {
   return (
     <nav>
-      <ul>
+      <div className="nav-container text-shadow fs-300">
         <Link to={"home/1"} onClick={() => setCategory("home")}>
           Home
         </Link>
@@ -19,7 +19,7 @@ function Nav({ setCategory }) {
         <Link to={"sports/1"} onClick={() => setCategory("sports")}>
           Sports
         </Link>
-      </ul>
+      </div>
     </nav>
   );
 }

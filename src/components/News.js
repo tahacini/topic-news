@@ -40,15 +40,18 @@ function News({ category, setCategory, currentPage, setCurrentPage }) {
 
   return (
     <section className="section-container">
-      {currentNews.map((el, index) => (
-        <NewsBox
-          key={index}
-          title={el.title}
-          abstract={el.abstract}
-          image={el.multimedia ? el.multimedia[0] : []}
-          url={el.url}
-        />
-      ))}
+      <div className="news-container">
+        {currentNews.map((el, index) => (
+          <NewsBox
+            key={index}
+            title={el.title}
+            abstract={el.abstract}
+            image={el.multimedia ? el.multimedia[0] : []}
+            url={el.url}
+            by={el.byline}
+          />
+        ))}
+      </div>
       <Pagination
         newsPerPage={newsPerPage}
         totalNews={news.length}

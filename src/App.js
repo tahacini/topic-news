@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import News from "./components/News";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 function App() {
   const [category, setCategory] = useState("world");
@@ -32,6 +33,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
