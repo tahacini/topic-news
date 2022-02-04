@@ -5,7 +5,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 function App() {
-  const [category, setCategory] = useState("world");
+  const [category, setCategory] = useState("home");
   const [currentPage, setCurrentPage] = useState(1);
 
   const changeCategory = (cate) => {

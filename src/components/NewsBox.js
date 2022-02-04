@@ -14,7 +14,7 @@ function NewsBox({ title, abstract, url, image, by }) {
           <p className="text-shadow fs-150">{abstract}</p>
           <div className="whole text-shadow">
             <a href={url} target="_blank" rel="noopener noreferrer">
-              <span className="story">Whole Story</span>
+              <span className="story fs-100">Whole Story</span>
               <img src={nytsmall} alt="NYT" />
             </a>
           </div>

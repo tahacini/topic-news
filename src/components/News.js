@@ -9,6 +9,8 @@ function News({ category, setCategory, currentPage, setCurrentPage }) {
   const [newsPerPage] = useState(6);
   const { page, cate } = useParams();
 
+  // Fetch Data
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       fetchNews(category, setNews);
@@ -21,6 +23,13 @@ function News({ category, setCategory, currentPage, setCurrentPage }) {
   const indexOfLastNew = currentPage * newsPerPage;
   const indexOfFirstNew = indexOfLastNew - newsPerPage;
   const currentNews = news.slice(indexOfFirstNew, indexOfLastNew);
+
+  // Pagination
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(news.length / newsPerPage); i++) {
+    pageNumbers.push(i);
+  }
 
   // Change Page
 
@@ -36,7 +45,7 @@ function News({ category, setCategory, currentPage, setCurrentPage }) {
     if (cate) {
       setCategory(cate);
     }
-  }, []);
+  }, [page, cate]);
 
   return (
     <section className="section-container">
@@ -53,10 +62,11 @@ function News({ category, setCategory, currentPage, setCurrentPage }) {
         ))}
       </div>
       <Pagination
-        newsPerPage={newsPerPage}
-        totalNews={news.length}
+        pageNumbers={pageNumbers}
         paginate={paginate}
         category={category}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
       />
     </section>
   );
