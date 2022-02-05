@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "./img/logo.png";
 import nyt from "./img/nyt.png";
 

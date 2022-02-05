@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import nytsmall from "./img/nytsmall.png";
 
 function NewsBox({ title, abstract, url, image, by }) {

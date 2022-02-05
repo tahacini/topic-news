@@ -6,12 +6,3 @@ export const fetchNews = async (category, setState) => {
   setState(data.results);
   console.log(data.results);
 };
-
-// export const fetchNews = async (country, category, setState) => {
-//   const datas = await fetch(
-//     `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`
-//   );
-//   const data = await datas.json();
-//   setState(data.articles);
-//   console.log(data.articles);
-// };
