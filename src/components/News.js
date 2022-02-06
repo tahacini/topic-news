@@ -45,7 +45,7 @@ function News({ category, setCategory, currentPage, setCurrentPage }) {
     if (cate) {
       setCategory(cate);
     }
-  }, [page, cate]);
+  }, [page, cate]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section className="section-container">
