@@ -15,6 +15,7 @@ function Pagination({
   useEffect(() => {
     setPage(pageNumbers);
     CustomPagination(current, pageNumbers, setPage);
+    window.scrollTo({ top: "0px" });
   }, [pageNumbers, current, category]);
 
   const handleInc = () => {

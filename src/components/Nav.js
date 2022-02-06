@@ -1,6 +1,22 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import DropDownMenu from "./DropDownMenu";
 
 function Nav({ setCategory }) {
+  const [open, setOpen] = useState(false);
+  let time;
+
+  const handleEnter = () => {
+    clearTimeout(time);
+    setOpen(true);
+  };
+
+  const handleLeave = () => {
+    time = setTimeout(() => {
+      setOpen(false);
+    }, 750);
+  };
+
   return (
     <nav>
       <div className="nav-container text-shadow fs-300">
@@ -39,6 +55,23 @@ function Nav({ setCategory }) {
         >
           Sports
         </NavLink>
+        <div
+          onMouseEnter={() => handleEnter()}
+          onMouseLeave={() => handleLeave()}
+          className="more none-mobil"
+        >
+          More{" "}
+          <i
+            className={
+              open
+                ? "fas fa-chevron-up arrow-active"
+                : "fas fa-chevron-up arrow"
+            }
+          ></i>
+          <div className={open ? "open close" : "close"}>
+            <DropDownMenu setCategory={setCategory} setOpen={setOpen} />
+          </div>
+        </div>
       </div>
     </nav>
   );

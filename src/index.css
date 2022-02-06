@@ -13,11 +13,12 @@
   --fs-700: 3rem; /*48px*/
   --fs-800: 4rem; /*64px*/
   --fs-900: 8rem; /*128px*/
-  --ff-main: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+  --ff-main: "IBM Plex Sans Thai Looped", -apple-system, BlinkMacSystemFont,
+    "Roboto", sans-serif;
   --clr-side-white: #fff;
   --clr-side-black: #222;
   --clr-primary-white: #fefefe;
-  --clr-primary-black: #17161a;
+  --clr-primary-black: #100f11;
   --clr-primary-purple: #7269f6;
   --clr-primary-yellow: #f9f871;
   --clr-primary-gray: #ada9bb;
@@ -104,10 +105,6 @@ img {
 
 .absolute {
   position: absolute;
-}
-
-.open {
-  user-select: none;
 }
 
 .text-hollow {
@@ -203,6 +200,57 @@ a {
 
 .active-nav {
   background-color: #ada9bb;
+}
+
+.more {
+  user-select: none;
+  cursor: pointer;
+}
+
+.arrow {
+  transform: rotate(0deg);
+  transition: 0.4s ease-out;
+}
+
+.arrow-active {
+  transform: rotate(180deg);
+  transition: 0.4s ease-out;
+}
+
+.drop-down {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 1.23rem;
+  padding: 0 3rem 1rem 0.5rem;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--clr-primary-purple);
+  background-color: var(--clr-primary-black);
+  border-radius: 0 0 8px 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.drop-down > * {
+  color: var(--clr-primary-white);
+  font-weight: 500;
+  padding: 0.25rem;
+  border-radius: 5px;
+}
+
+.drop-down > *:hover {
+  background-color: #ada9bb;
+  transform: scale(1.005);
+  transition: 0.4s ease-out;
+}
+
+.close {
+  transform: scale(1, 0);
+  transition: transform 350ms ease-in-out;
+  transform-origin: top;
+}
+
+.open {
+  transform: scale(1, 1);
 }
 
 /*============= 
