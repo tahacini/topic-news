@@ -1,24 +1,44 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Nav({ setCategory }) {
   return (
     <nav>
       <div className="nav-container text-shadow fs-300">
-        <Link to={"home/1"} onClick={() => setCategory("home")}>
+        <NavLink
+          to={"/home"}
+          onClick={() => setCategory("home")}
+          className={({ isActive }) => (isActive ? "active-nav" : "")}
+        >
           Home
-        </Link>
-        <Link to={"world/1"} onClick={() => setCategory("world")}>
+        </NavLink>
+        <NavLink
+          to={"/world"}
+          onClick={() => setCategory("world")}
+          className={({ isActive }) => (isActive ? "active-nav" : "")}
+        >
           World
-        </Link>
-        <Link to={"technology/1"} onClick={() => setCategory("technology")}>
+        </NavLink>
+        <NavLink
+          to={"/technology"}
+          onClick={() => setCategory("technology")}
+          className={({ isActive }) => (isActive ? "active-nav" : "")}
+        >
           Technology
-        </Link>
-        <Link to={"movies/1"} onClick={() => setCategory("movies")}>
+        </NavLink>
+        <NavLink
+          to={"/movies"}
+          onClick={() => setCategory("movies")}
+          className={({ isActive }) => (isActive ? "active-nav" : "")}
+        >
           Movies
-        </Link>
-        <Link to={"sports/1"} onClick={() => setCategory("sports")}>
+        </NavLink>
+        <NavLink
+          to={"/sports"}
+          onClick={() => setCategory("sports")}
+          className={({ isActive }) => (isActive ? "active-nav" : "")}
+        >
           Sports
-        </Link>
+        </NavLink>
       </div>
     </nav>
   );

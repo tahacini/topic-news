@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import CustomPagination from "./CustomPagination";
 
 function Pagination({
   pageNumbers,
@@ -9,26 +10,12 @@ function Pagination({
   currentPage,
 }) {
   const [page, setPage] = useState([]);
-  const curr = parseInt(currentPage);
+  const current = parseInt(currentPage);
 
   useEffect(() => {
     setPage(pageNumbers);
-    pagi();
-  }, [pageNumbers, currentPage, category]);
-
-  const pagi = () => {
-    if (curr < 3 && pageNumbers[pageNumbers.length - 1] >= 5) {
-      setPage((pa) => pa.slice(0, 5));
-    } else if (curr >= 3 && pageNumbers[pageNumbers.length - 1] >= curr + 2) {
-      setPage((pa) => pa.slice(curr - 3, curr + 2));
-    }
-    if (
-      pageNumbers[pageNumbers.length - 1] >= 5 &&
-      curr + 2 >= pageNumbers[pageNumbers.length - 1]
-    ) {
-      setPage((pa) => pa.slice(-5));
-    }
-  };
+    CustomPagination(current, pageNumbers, setPage);
+  }, [pageNumbers, current, category]);
 
   const handleInc = () => {
     if (currentPage >= pageNumbers[pageNumbers.length - 1]) {
@@ -58,7 +45,7 @@ function Pagination({
             to={`${category}/${number}`}
             onClick={() => paginate(number)}
             key={number}
-            className="story"
+            className={current === number ? "active-story" : "story"}
           >
             {number}
           </Link>
