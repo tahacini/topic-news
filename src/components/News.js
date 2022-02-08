@@ -48,7 +48,7 @@ function News({ category, setCategory, currentPage, setCurrentPage }) {
   }, [page, cate]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <section className="section-container">
+    <section className="section-container stick">
       <div className="news-container">
         {currentNews.map((el, index) => (
           <NewsBox

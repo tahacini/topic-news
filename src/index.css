@@ -52,8 +52,19 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 nav {
@@ -68,6 +79,10 @@ body {
   line-height: var(--lh-10);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.stick {
+  flex: 1;
 }
 
 img {
